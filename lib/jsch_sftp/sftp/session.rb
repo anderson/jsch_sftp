@@ -38,7 +38,7 @@ module JschSFTP
       end
 
       def self.connect(jsch, user, host, options)
-        session = jsch.get_session(user, host)
+        session = jsch.get_session(user, host, options[:port] || 22)
         configure(session, options)
         session.connect
 
